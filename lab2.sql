@@ -26,7 +26,7 @@ insert into countries (country_name, country_id, region_id) values
 update countries set country_name = NULL where region_id = 5;
 
 --9
-create table countries_new as table countries with no data;
+insert into countries default values;
 
 --10
 create table countries_new as table countries with no data;
@@ -48,5 +48,3 @@ delete from countries_new where country_id in (select country_id from countries)
 
 --16
 delete from countries returning *;
-
-
